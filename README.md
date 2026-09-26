@@ -1,42 +1,41 @@
-# Platform Channel Samples
+# Flutter Platform Channels Sample
 
-A sample app which demonstrates how to use `MethodChannel`, `EventChannel`, `BasicMessageChannel` and `MessageCodec` in Flutter.
+A Flutter application demonstrating communication between Dart and platform-specific code.
 
-## Goals
+## Demonstrations
 
-* Demonstrate how to use `MethodChannel` to invoke platform methods.
-* Demonstrate how to use `EventChannel` to listen continuous value changes from the platform.
-* Demonstrate how to use `BasicMessageChannel` and `MessageCodec` to send messages of different types across the platform.
+- `MethodChannel` for invoking platform methods
+- `EventChannel` for receiving event streams
+- `BasicMessageChannel` for structured message exchange
+- Platform-provided image handling
+- A small pet list workflow built on platform messaging
 
-## The important bits
+## Requirements
 
-### [Method Channel demo](./lib/src/method_channel_demo.dart)
+- Flutter SDK compatible with Dart `>=2.17.0 <3.0.0`
+- Android Studio or Xcode for device-specific builds
+- An emulator, simulator, or physical device
 
-Demonstrates how to implement a `MethodChannel` to increment and decrement a
-counter.
+## Run
 
-### [Event Channel demo](./lib/src/event_channel_demo.dart)
+```bash
+flutter pub get
+flutter analyze
+flutter test
+flutter run
+```
 
-Demonstrates how to implement an `EventChannel` to listen to value changes from
-the Accelerometer sensor from native side.
+## Structure
 
-### [Platform Image demo](./lib/src/platform_image_demo.dart)
+```text
+.
+├── lib/        # Dart UI and channel examples
+├── android/    # Android platform implementation
+├── ios/        # iOS platform implementation
+├── assets/     # Sample assets
+└── test/       # Flutter tests
+```
 
-Demonstrates how to implement a `BasicMessageChannel` using
-`StandardMessageCodec` to load an image from native asset.
+## CI/CD note
 
-### [Basic Message Channel demo](./lib/src/pet_list_screen.dart)
-
-Demonstrates how to implement `BasicMessageChannel` using `JSONMessageCodec`,
-`BinaryCodec` and `StringCodec` to send and receive data about pets.
-
-## Questions/issues
-
-If you have a general question about Platform Channels in Flutter, the
-best places to go are:
-
-* [The FlutterDev Google Group](https://groups.google.com/forum/#!forum/flutter-dev)
-* [The Flutter Gitter channel](https://gitter.im/flutter/flutter)
-* [StackOverflow](https://stackoverflow.com/questions/tagged/flutter)
-
-If you run into an issue with the sample itself, please file an issue [here](https://github.com/flutter/samples/issues).
+The repository name reflects an earlier App Center pipeline experiment. This snapshot contains the Flutter sample application; deployment credentials and a complete App Center pipeline are intentionally not stored here.
